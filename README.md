@@ -1,3 +1,6 @@
+###CHECK IT ONLINE
+https://text-editor-node.herokuapp.com/
+
 ### Installing
 
 Clone the Repository and run
