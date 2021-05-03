@@ -42,7 +42,7 @@ const handleSaveFile = async fileName => {
    }).then(res => {
       if (res.status === 200) {
          textSpace.textContent = '';
-         window.alert('The file was saved!');
+         window.alert('The file was saved in documents!');
       }
    });
 };
