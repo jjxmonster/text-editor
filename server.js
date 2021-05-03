@@ -1,6 +1,8 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const homeDir = require('os').homedir();
+const desktopDir = `${homeDir}/Documents`;
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -11,8 +13,8 @@ app.use(express.static(path.join(__dirname, './front')));
 
 app.post('/save', (req, res) => {
    const { text, fileName } = req.body;
-   console.log(text);
-   fs.writeFile(`${fileName}.json`, JSON.stringify(text), err => {
+   console.log(`${desktopDir}/${fileName}.json`);
+   fs.writeFile(`${desktopDir}/${fileName}.json`, JSON.stringify(text), err => {
       if (err) {
          return console.log(err);
       }
